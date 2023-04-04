@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/match_list"
+        android:title="@string/text_matches"
+        android:icon="@drawable/ic_list"/>
+    <item
+        android:id="@+id/map"
+        android:title="@string/text_map"
+        android:icon="@drawable/ic_map"/>
+</menu>
