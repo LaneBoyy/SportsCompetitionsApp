@@ -72,7 +72,6 @@ class MapFragment : Fragment(), UserLocationObjectListener {
     private fun setInitialPosition() {
         CoroutineScope(Dispatchers.Main).launch {
             while (cameraLatitude == 0.0) {
-                Log.d("FFFFF", "DDDDDDD")
                 delay(500)
             }
             setLocation()

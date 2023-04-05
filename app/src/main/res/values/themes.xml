@@ -22,6 +22,16 @@
         <item name="labelVisibilityMode">selected</item>
         <item name="itemIconTint">@drawable/bottom_menu_item_tint</item>
         <item name="itemTextColor">@drawable/bottom_menu_item_tint</item>
+        <item name="itemTextAppearanceActive">@style/BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationView.Inactive</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="TextAppearance.AppCompat.Caption">
+        <item name="fontFamily">@font/stem_semilight</item>
+    </style>
+
+    <style name="BottomNavigationView.Inactive" parent="TextAppearance.AppCompat.Caption">
+        <item name="fontFamily">@font/stem_semilight</item>
     </style>
 
 </resources>
