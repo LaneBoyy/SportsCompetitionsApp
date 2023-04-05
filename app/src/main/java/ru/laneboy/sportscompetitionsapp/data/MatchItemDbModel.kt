@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 data class MatchItemDbModel(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val labelTeamOne: Int,
-    val labelTeamTwo: Int,
+    val labelTeamOne: String,
+    val labelTeamTwo: String,
     val scoreTeamOne: Int,
     val scoreTeamTwo: Int
 )

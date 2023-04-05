@@ -1,4 +1,4 @@
-package ru.laneboy.sportscompetitionsapp.presentation
+package ru.laneboy.sportscompetitionsapp.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

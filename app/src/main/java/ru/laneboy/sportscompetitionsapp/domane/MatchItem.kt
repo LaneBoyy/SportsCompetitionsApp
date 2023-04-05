@@ -4,10 +4,10 @@ import androidx.annotation.DrawableRes
 
 data class MatchItem(
 
-    @DrawableRes
-    val labelTeamOne: Int,
-    @DrawableRes
-    val labelTeamTwo: Int,
+//    @DrawableRes
+    val labelTeamOne: String,
+//    @DrawableRes
+    val labelTeamTwo: String,
 
     val scoreTeamOne: Int,
     val scoreTeamTwo: Int,
