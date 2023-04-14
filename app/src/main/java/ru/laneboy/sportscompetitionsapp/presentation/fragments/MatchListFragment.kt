@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.laneboy.sportscompetitionsapp.R
 import ru.laneboy.sportscompetitionsapp.databinding.FragmentMatchListBinding
+import ru.laneboy.sportscompetitionsapp.domane.MatchItem
 import ru.laneboy.sportscompetitionsapp.presentation.MainViewModel
 import ru.laneboy.sportscompetitionsapp.presentation.MatchListAdapter
 
@@ -39,14 +40,25 @@ class MatchListFragment : Fragment() {
         clickOnButtonAdd()
 
         viewModel.matchList.observe(viewLifecycleOwner) {
-            launchFragment(MatchItemAddFragment.newInstance())
+//            launchFragment(MatchItemAddFragment.newInstance())
+            matchListAdapter?.submitList(it)
         }
     }
 
+    private var incrementer = 0
+
     private fun clickOnButtonAdd() {
         binding.btnAddMatchItem.setOnClickListener {
-            goneBottomNavigation()
-            launchFragment(MatchItemAddFragment.newInstance())
+            viewModel.addMatchItem(
+                MatchItem(
+                    labelTeamOne = "А",
+                    labelTeamTwo = "Б",
+                    0,
+                    1,
+                )
+            )
+//            goneBottomNavigation()
+//            launchFragment(MatchItemAddFragment.newInstance())
         }
     }
 
@@ -77,6 +89,7 @@ class MatchListFragment : Fragment() {
 
     private fun setupClickListener() {
         matchListAdapter?.onMatchItemClickListener = {
+            goneBottomNavigation()
             launchFragment(MatchItemFragment.newInstance())
         }
     }
