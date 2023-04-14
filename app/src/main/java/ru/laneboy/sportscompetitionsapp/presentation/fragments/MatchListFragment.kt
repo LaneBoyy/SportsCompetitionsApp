@@ -40,25 +40,24 @@ class MatchListFragment : Fragment() {
         clickOnButtonAdd()
 
         viewModel.matchList.observe(viewLifecycleOwner) {
-//            launchFragment(MatchItemAddFragment.newInstance())
             matchListAdapter?.submitList(it)
         }
     }
 
-    private var incrementer = 0
-
     private fun clickOnButtonAdd() {
         binding.btnAddMatchItem.setOnClickListener {
-            viewModel.addMatchItem(
-                MatchItem(
-                    labelTeamOne = "А",
-                    labelTeamTwo = "Б",
-                    0,
-                    1,
-                )
-            )
-//            goneBottomNavigation()
-//            launchFragment(MatchItemAddFragment.newInstance())
+        //            <ДОБАВЛЕНИЕ В БД>
+//            viewModel.addMatchItem(
+//                MatchItem(
+//                    labelTeamOne = "А",
+//                    labelTeamTwo = "Б",
+//                    0,
+//                    1,
+//                )
+//            )
+        //            </ДОБАВЛЕНИЕ В БД>
+            goneBottomNavigation()
+            launchFragment(MatchItemAddFragment.newInstance())
         }
     }
 

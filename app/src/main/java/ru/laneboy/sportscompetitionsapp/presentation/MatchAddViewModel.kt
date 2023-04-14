@@ -33,6 +33,12 @@ class MatchAddViewModel(application: Application) : AndroidViewModel(application
         }
     }
 
+    fun addMatchItemUseCase(){
+        viewModelScope.launch {
+            finishWork()
+        }
+    }
+
     private fun parseTeamLabel(inputTeamLabel: String?): String {
         return inputTeamLabel?.trim() ?: ""
     }
@@ -43,5 +49,9 @@ class MatchAddViewModel(application: Application) : AndroidViewModel(application
         } else {
             0
         }
+    }
+
+    private fun finishWork() {
+        _shouldCloseScreen.value = Unit
     }
 }

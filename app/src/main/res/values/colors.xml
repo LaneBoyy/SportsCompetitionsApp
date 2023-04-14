@@ -14,6 +14,9 @@
     <color name="red">#F44336</color>
     <color name="grey_background">#373A36</color>
     <color name="grey_tint">#777777</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="grey_text">#A9ABB8</color>
+    <color name="grey_stroke">#8B959595</color>
     <color name="gradient_pink">#EC008C</color>
     <color name="gradient_orange">#FC6767</color>
 </resources>

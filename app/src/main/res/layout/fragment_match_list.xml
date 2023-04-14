@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:background="@drawable/linear_layout_background"
+        android:background="@drawable/linear_layout_background_top"
         android:orientation="horizontal"
         android:paddingTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -5,4 +5,6 @@
     <string name="text_sport_matches">Спортивные матчи</string>
     <string name="text_matches">Матчи</string>
     <string name="text_map">Карта</string>
+    <string name="text_create_new_match">Создание нового матча</string>
+    <string name="text_create">Создать</string>
 </resources>

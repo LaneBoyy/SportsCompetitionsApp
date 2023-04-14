@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import ru.laneboy.sportscompetitionsapp.R
 import ru.laneboy.sportscompetitionsapp.databinding.ActivityMainBinding
 import ru.laneboy.sportscompetitionsapp.presentation.fragments.MapFragment
+import ru.laneboy.sportscompetitionsapp.presentation.fragments.MatchItemAddFragment
 import ru.laneboy.sportscompetitionsapp.presentation.fragments.MatchListFragment
 
 
