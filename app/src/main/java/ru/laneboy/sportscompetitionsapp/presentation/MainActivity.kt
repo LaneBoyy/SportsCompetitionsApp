@@ -3,15 +3,18 @@ package ru.laneboy.sportscompetitionsapp.presentation
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.laneboy.sportscompetitionsapp.R
 import ru.laneboy.sportscompetitionsapp.databinding.ActivityMainBinding
 import ru.laneboy.sportscompetitionsapp.presentation.fragments.MapFragment
 import ru.laneboy.sportscompetitionsapp.presentation.fragments.MatchItemAddFragment
 import ru.laneboy.sportscompetitionsapp.presentation.fragments.MatchListFragment
+import ru.laneboy.sportscompetitionsapp.presentation.fragments.SignInFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,12 +29,13 @@ class MainActivity : AppCompatActivity() {
 
         removeStatusBar()
         requestLocationPermission()
+        setFragment(SignInFragment.newInstance())
         setBottomNavigation()
 
     }
 
     private fun setBottomNavigation() {
-        setFragment(MatchListFragment.newInstance())
+        binding.bottomNavigation.visibility = View.GONE
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.match_list -> {

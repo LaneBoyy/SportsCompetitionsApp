@@ -30,10 +30,18 @@ class MatchItemAddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bottomNavigationIsGone()
         viewModel = ViewModelProvider(this)[MatchAddViewModel::class.java]
         observeViewModel()
         setOnButtonCreateClick()
     }
+
+    private fun bottomNavigationIsGone() {
+        requireActivity()
+            .findViewById<BottomNavigationView>(R.id.bottom_navigation)
+            .visibility = View.GONE
+    }
+
 
     private fun setOnButtonCreateClick() {
         binding.btnCreateMatch.setOnClickListener {
@@ -47,15 +55,8 @@ class MatchItemAddFragment : Fragment() {
         }
     }
 
-    private fun setupBottomNavigation() {
-        requireActivity()
-            .findViewById<BottomNavigationView>(R.id.bottom_navigation)
-            .visibility = View.VISIBLE
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
-        setupBottomNavigation()
         _binding = null
     }
 

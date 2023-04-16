@@ -1,10 +1,12 @@
 package ru.laneboy.sportscompetitionsapp.presentation.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -36,6 +38,7 @@ class MatchListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bottomNavigationIsVisible()
         setupRecyclerView()
         clickOnButtonAdd()
 
@@ -44,9 +47,15 @@ class MatchListFragment : Fragment() {
         }
     }
 
+    private fun bottomNavigationIsVisible() {
+        requireActivity()
+            .findViewById<BottomNavigationView>(R.id.bottom_navigation)
+            .visibility = VISIBLE
+    }
+
     private fun clickOnButtonAdd() {
         binding.btnAddMatchItem.setOnClickListener {
-        //            <ДОБАВЛЕНИЕ В БД>
+            //            <ДОБАВЛЕНИЕ В БД>
 //            viewModel.addMatchItem(
 //                MatchItem(
 //                    labelTeamOne = "А",
@@ -55,8 +64,7 @@ class MatchListFragment : Fragment() {
 //                    1,
 //                )
 //            )
-        //            </ДОБАВЛЕНИЕ В БД>
-            goneBottomNavigation()
+            //            </ДОБАВЛЕНИЕ В БД>
             launchFragment(MatchItemAddFragment.newInstance())
         }
     }
@@ -66,12 +74,6 @@ class MatchListFragment : Fragment() {
             .replace(R.id.fragment_container_main, fragment)
             .addToBackStack(null)
             .commit()
-    }
-
-    private fun goneBottomNavigation() {
-        requireActivity()
-            .findViewById<BottomNavigationView>(R.id.bottom_navigation)
-            .visibility = GONE
     }
 
     private fun setupRecyclerView() {
@@ -88,7 +90,6 @@ class MatchListFragment : Fragment() {
 
     private fun setupClickListener() {
         matchListAdapter?.onMatchItemClickListener = {
-            goneBottomNavigation()
             launchFragment(MatchItemFragment.newInstance())
         }
     }
